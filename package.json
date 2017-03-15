@@ -1,0 +1,39 @@
+{
+    "name": "dot-files",
+    "description": "Create dot-files with NPM.",
+    "version": "0.0.1",
+    "homepage": "https://github.com/RayBenefield/dot-files",
+    "author": {
+        "name": "Raymond Benefield",
+        "email": "raymond.benefield@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/RayBenefield/dot-files.git"
+    },
+    "bugs": {
+        "url": "https://github.com/RayBenefield/dot-files/issues"
+    },
+    "license": "MIT",
+    "main": "src/dot-files.js",
+    "engines": {
+        "node": ">= 8.1.2",
+        "npm": ">=1.4.3"
+    },
+    "scripts": {
+        "test": "echo \"No Tests Yet\"",
+        "lint": "eslint -c .eslintrc.json src/",
+        "build": "babel src -d dist",
+        "clean": "rimraf dist",
+        "patch": "npm version patch -m 'v%s' && js-beautify -r package.json && git commit -a --amend --no-edit",
+        "minor": "npm version minor -m 'v%s' && js-beautify -r package.json && git commit -a --amend --no-edit",
+        "major": "npm version major -m 'v%s' && js-beautify -r package.json && git commit -a --amend --no-edit"
+    },
+    "dependencies": {},
+    "devDependencies": {},
+    "babel": {
+        "presets": [
+            "es2015"
+        ]
+    }
+}
